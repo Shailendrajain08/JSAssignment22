@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="expenseManager.css">
+</head>
+
+<body>
+    <div id="body" class="body">
+        <div class="main">
+            <div class="border">
+                <h1>Personal Expense Manager</h1>
+                <form class="myForm" onsubmit="event.preventDefault();onFormSubmit();" autocomplete="off">
+                    <div class="row">
+                        <div id="left" class="width-6 container-padding">
+                            <label>
+                                <h2>Add a new Item:</h2>
+                            </label>
+                            <p>
+                                <label>Payment Type*
+                                    <!-- <input type="text" placeholder="Payment Type" name="paymentType" id="paymentType"
+                                        required> -->
+                                    <select name="friendName" id="paymentType" required>
+                                        <option value="">Select Type Of Payment</option>
+                                        <option value="cash">Cash</option>
+                                        <option value="cheque">Cheque</option>
+                                        <option value="upi">UPI</option>
+                                        <option value="card">Card</option>
+                                    </select>
+                                </label>
+                            </p>
+
+                            <p>
+                                <label>Expense Name*
+                                    <input type="text" placeholder="Expense Name" name="expenseName" id="expenseName"
+                                        required>
+                                </label>
+                            </p>
+
+
+                            <p>
+                                <label>Currency*
+                                    <select name="currency" id="currency" required>
+                                        <option value="">Select Any Currency</option>
+                                        <option value="INR">Indian Rupees ₹</option>
+                                        <option value="Doller">Doller $</option>
+                                        <option value="Pound">British Pound £</option>
+                                        <option value="Euro">Euro €</option>
+                                    </select>
+                                </label>
+                            </p>
+                        </div>
+                        <div class="width-6 container-padding">
+                            <div class="addFri">
+                                <a class="addFriend" href="#card">Add a new friend</a>
+                            </div>
+                            <p>
+                                <label>Friend*
+                                    <select name="friendName" id="friendName">
+                                        <option value="">Select A Friend</option>
+                                    </select>
+                                </label>
+                            </p>
+                            <p>
+                                <label>Date*
+                                    <input type="date" name="date" id="date" required>
+                                </label>
+                            </p>
+                            <p>
+                                <label>Amount*
+                                    <input type="number" name="amount" id="amount" required>
+                                </label>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="width-6 container-padding">
+                        <p><button class="submit">Add a new expense</button></p>
+
+                    </div>
+                </form>
+            </div>
+            <div class="tableDiv">
+                <h1>Expense Table</h1>
+                <div class="filter">
+                    <div class="filterDrop">
+                        <label for="">Filter By Friend: </label>
+                        <select name="" id="filterFriendName">
+                            <option value="">Filter By Friend</option>
+                        </select>
+                    </div>
+                    <div class="filterDrop">
+                        <label for="">Filter By Currency: </label>
+                        <select name="" id="">
+                            <option value="">Filter By Currency</option>
+                            <option value="INR">Indian Rupees ₹</option>
+                            <option value="Doller">Doller $</option>
+                            <option value="Pound">British Pound £</option>
+                            <option value="Euro">Euro €</option>
+                        </select>
+                    </div>
+                </div>
+                <table class="customers" id="expenseMan">
+                    <thead>
+                        <tr>
+                            <th>Date</th>
+                            <th>Friend</th>
+                            <th>Expense Name</th>
+                            <th>Payment Type</th>
+                            <th>Currency</th>
+                            <th>Amount</th>
+                            <th>Edit/Update</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!-- Add Friend Card 
+Start from here -->
+
+    <div class="cardBody" id="card">
+        <div class="card">
+            <div class="openExpense">
+                <a class="openexp" href="#body">Expense Manager</a>
+            </div>
+            <div class="cardBorder">
+                <h2>Add A New Friend</h2>
+                <form onsubmit="event.preventDefault();onFriendSubmit();">
+                    <input type="text" name="friend" id="friend" placeholder="Add a friend" required>
+                    <button htef class="submitbtn">Add Friend</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="expenseManager.js"></script>
+</body>
+
+</html>
